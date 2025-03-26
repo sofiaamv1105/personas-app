@@ -68,7 +68,7 @@ class DepartamentoController extends Controller
         ->orderBy('pais_nomb')
         ->get();
     
-        return view('departamento.edit', ['departamento' => $comuna, 'paises' => $paises]);
+        return view('departamento.edit', ['departamento' => $departamento, 'paises' => $paises]);
     }
 
     /**
@@ -82,7 +82,7 @@ class DepartamentoController extends Controller
         $departamento->pais_codi = $request->code;
         $departamento->save();
 
-        $departamentos = DB::table('departamento')
+        $departamentos = DB::table('tb_departamento')
             ->join('tb_pais', 'tb_departamento.pais_codi', '=', 'tb_pais.pais_codi')
             ->select('tb_departamento.*', "tb_pais.pais_nomb")
             ->get();
