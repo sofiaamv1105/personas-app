@@ -6,8 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 class Comuna extends Model
 {
     use HasFactory;
-    protected $table = 'tb_municipio';
-    protected $primaryKey = 'muni_codi';
+    protected $table = 'tb_departamento';
+    protected $primaryKey = 'depa_codi';
     public $timestamps = false;
 }
-
