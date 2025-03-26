@@ -42,7 +42,7 @@ class DepartamentoController extends Controller
      */
     public function show(string $id)
     {
-        //
+        
     }
 
     /**
