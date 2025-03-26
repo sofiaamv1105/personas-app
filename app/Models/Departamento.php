@@ -1,6 +1,7 @@
 <?php
+namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory; 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Comuna extends Model
@@ -9,4 +10,5 @@ class Comuna extends Model
     protected $table = 'tb_departamento';
     protected $primaryKey = 'depa_codi';
     public $timestamps = false;
+    protected $fillable = ['depa_nomb', 'pais_codi'];
 }
