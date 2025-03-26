@@ -20,7 +20,6 @@ class DepartamentoController extends Controller
             ->get();
         return view('departamento.index', ['departamentos' => $departamentos]);
     }
-
     /**
      * Show the form for creating a new resource.
      */
@@ -32,9 +31,6 @@ class DepartamentoController extends Controller
         return view('departamento.new', ['paises' => $paises]); 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
        $departamento = new Departamento();
