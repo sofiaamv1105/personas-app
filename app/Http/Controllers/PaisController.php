@@ -20,7 +20,7 @@ class PaisController extends Controller
      */
     public function create()
     {
-        //
+        return view('pais.new');
     }
 
     /**
@@ -28,7 +28,19 @@ class PaisController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'pais_codi' => 'required|string|size:3|unique:tb_pais,pais_codi',
+            'pais_nomb' => 'required|string|max:52',
+            'pais_capi' => 'required|integer',
+        ]);
+
+        Pais::create([
+            'pais_codi' => $request->pais_codi,
+            'pais_nomb' => $request->pais_nomb,
+            'pais_capi' => $request->pais_capi,
+        ]);
+
+        return redirect()->route('pais.index')->with('success', 'País agregado correctamente.');
     }
 
     /**

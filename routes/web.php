@@ -32,3 +32,5 @@ Route::put('/municipios/{municipio}', [MunicipioController::class, 'update'])->n
 Route::get('/municipios/{municipio}/edit', [MunicipioController::class, 'edit'])->name('municipios.edit');
 
 Route::get('/paises', [PaisController::class, 'index'])->name('paises.index');
+Route::post('/paises', [PaisController::class, 'store'])->name('paises.store');
+Route::get('/paises/create', [PaisController::class, 'create'])->name('paises.create');
