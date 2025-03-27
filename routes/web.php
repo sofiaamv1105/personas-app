@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComunaController;
 use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\MunicipioController;
+use App\Http\Controllers\PaisController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,3 +30,5 @@ Route::get('/municipios/create', [MunicipioController::class, 'create'])->name('
 Route::delete('/municipios/{municipio}', [MunicipioController::class, 'destroy'])->name('municipios.destroy');
 Route::put('/municipios/{municipio}', [MunicipioController::class, 'update'])->name('municipios.update');
 Route::get('/municipios/{municipio}/edit', [MunicipioController::class, 'edit'])->name('municipios.edit');
+
+Route::get('/paises', [PaisController::class, 'index'])->name('paises.index');
