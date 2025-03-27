@@ -13,7 +13,7 @@
   <body>
     <div class="container">
       <h1>Add Country</h1>
-      <form method="POST" action="{{ route('pais.store') }}">
+      <form method="POST" action="{{ route('paises.store') }}">
         @csrf
         <div class="mb-3">
           <label for="pais_codi" class="form-label">Code</label>
@@ -29,7 +29,7 @@
         </div>
         <div class="mt-3">
           <button type="submit" class="btn btn-primary">Save</button>
-          <a href="{{ route('pais.index') }}" class="btn btn-warning">Cancel</a>
+          <a href="{{ route('paises.index') }}" class="btn btn-warning">Cancel</a>
         </div>
       </form>
     </div>
