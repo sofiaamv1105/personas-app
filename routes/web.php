@@ -24,3 +24,5 @@ Route::put('/departamentos/{departamento}', [DepartamentoController::class, 'upd
 Route::get('/departamentos/{departamento}/edit', [DepartamentoController::class, 'edit'])->name('departamentos.edit');
 
 Route::get('/municipios', [MunicipioController::class, 'index'])->name('municipios.index');
+Route::post('/municipios', [MunicipioController::class, 'store'])->name('municipios.store');
+Route::get('/municipios/create', [MunicipioController::class, 'create'])->name('municipios.create');
