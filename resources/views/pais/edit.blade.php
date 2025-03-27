@@ -8,32 +8,36 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Añadir Pais</title>
+    <title>Edit Pais</title>
   </head>
   <body>
     <div class="container">
-    <h1>Añadir Pais</h1>
-    <form method="POST" action="{{ route('paises.store') }}"> 
-        @csrf
+    <h1>Edit Pais</h1>
+    <form method="POST" action="{{ route('paises.update', ['pais' => $pais->pais_codi]) }}">
+    @method('put')
+    @csrf
         <div class="mb-3">
             
           <label for="id" class="form-label">Code</label>
-          <input type="text" class="form-control" id="pais_codi" name="pais_codi">
+          <input type="text" class="form-control" id="pais_codi" name="pais_codi"
+          desabled="disabled" value="{{ $pais->pais_codi }}">
           <div id="idHelp" class="form-text">Pais Code</div>
         </div>
         <div class="mb-3">
           <label for="name" class="form-label">Name</label>
-          <input type="text" class="form-control" id="pais_nomb" name="pais_nomb" placeholder="Nombre del país">
+          <input type="text" class="form-control" id="pais_nomb" name="pais_nomb" placeholder="Nombre del país"
+          value="{{ $pais->pais_nomb }}">  
 
         </div>
 
         <div class="mb-3">
           <label for="name" class="form-label">capi</label>
-          <input type="text" class="form-control" id="pais_capi" name="pais_capi" placeholder="Nombre del país">
+          <input type="text" class="form-control" id="pais_capi" name="pais_capi" placeholder="Nombre del país"
+          value="{{ $pais->pais_capi }}">  
 
         </div>
         <div class="mt-3">
-            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="submit" class="btn btn-primary">update</button>
         <a href="{{ route('paises.index') }}" class="btn btn-warning">Cancel</a>
         </div>
     </form>
