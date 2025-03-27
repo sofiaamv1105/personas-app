@@ -13,6 +13,7 @@
   <body>
 <div class ="container">
     <h1>Listado de Municipios</h1>
+    <a href="{{ route('municipios.create')}}" class= "btn btn-success">Add</a>
     <table class="table">
   <thead>
     <tr>
@@ -34,6 +35,7 @@
   </tbody>
 </table>
 </div>
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
