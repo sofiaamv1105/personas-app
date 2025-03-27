@@ -6,19 +6,16 @@ use Illuminate\Http\Request;
 use App\Models\Pais;
 use Illuminate\Support\Facades\DB;
 
-
 class PaisController extends Controller
 {
     /**
-    * Display a listing of the resource.
-    */
-   public function index()
-   {
-       $pais = Pais::all();
-       return view('paises.index',['paises'=>$pais]);
-   }
-
-
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        $pais = Pais::all();
+        return view('paises.index',['paises'=>$pais]);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -49,7 +46,7 @@ class PaisController extends Controller
      */
     public function show(string $id)
     {
-        //
+        
     }
 
     /**
@@ -71,7 +68,6 @@ class PaisController extends Controller
         $pais->pais_capi = $request->input('pais_capi');
         $pais->save();
         return redirect()->route('paises.index');
-
     }
 
     /**
@@ -82,6 +78,5 @@ class PaisController extends Controller
         $pais = Pais::findOrFail($id);
         $pais->delete();
         return redirect()->route('paises.index');
-
     }
 }
